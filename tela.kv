@@ -1,0 +1,67 @@
+BoxLayout:
+    id: main_win
+    orientation: "vertical"
+    canvas.before:
+        Color:
+            rgba: (.06, .45, .45, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        size_hint_y: None
+        height: 80
+       
+    BoxLayout:
+        BoxLayout:
+            orientation: "horizontal"  
+            id: detalhes_produtos
+           
+            BoxLayout:
+                orientation: 'vertical' 
+                id: labels_produtos
+                size_hint_x: None
+                width: 500  
+                canvas.before:
+                    Color:
+                        rgba: (.06, .45, .45, 1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                
+                Label:
+                    text: 'CODIGO:'
+                    size_hint_x: .5
+                Label:
+                    text: 'descricao do Produto:'
+                    size_hint_x: .5
+                Label:
+                    text: 'Fornecedor:'
+                    size_hint_x: .5
+                Label:
+                    text: 'discarte:'
+                    size_hint_x: .5
+                
+                Label:
+                    text: 'tipo de avaria:'
+                    size_hint_x: .5
+                Label:
+                    text: 'tipo de nota:'
+                    size_hint_x: .5
+
+            GridLayout:
+                id: products
+                cols: 1
+        
+    BoxLayout:
+        id:input_produt
+        size_hint_y:None
+        height:30
+        spacing:1
+    
+        TextInput:
+            id: cod_barra_input
+            size_hint_x: .5
+            multiline: False
+            on_text_validate: app.update_codigo()
+        
+        
